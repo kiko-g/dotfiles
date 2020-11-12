@@ -36,6 +36,9 @@
     "tab.inactiveBackground": "#2d363a",
     "tab.inactiveForeground": "#ffffff",
 
+    "editorIndentGuide.activeBackground": "#42555e",
+    "editorIndentGuide.background": "#1e292f00",
+
     "editorGroupHeader.tabsBackground": "#101f27",          //tabs group holder 
     "editorLineNumber.foreground": "#9ca9b1",               //line number
 
@@ -535,14 +538,13 @@
 ],
 
 // -------------------------- GENERAL SETTINGS --------------------------
-"window.zoomLevel": -1,
+"window.zoomLevel": 0,
 "explorer.sortOrder": "type",
 "zenMode.hideStatusBar": false,
 "C_Cpp.updateChannel": "Insiders",
 "C_Cpp.enhancedColorization": "Enabled",
 "atomKeymap.promptV3Features": true,
 "git.confirmSync": false,
-"liveServer.settings.CustomBrowser": "firefox",
 
 // ---------------------- GENERAL EDITOR SETTINGS -----------------------
 "editor.fontSize": 15,
@@ -554,7 +556,7 @@
 "editor.formatOnPaste": true,
 "editor.fontLigatures": false,
 "editor.minimap.enabled": false,
-"editor.renderIndentGuides": false,
+"editor.renderIndentGuides": true,
 "editor.overviewRulerBorder": false,
 "editor.cursorSmoothCaretAnimation": true,
 "editor.fontFamily": "JetBrains Mono, Consolas",
@@ -624,10 +626,11 @@
     "editor.defaultFormatter": "Wscats.qf",
     "editor.tabSize": 2,
 },
-"liveServer.settings.wait": 200,
+
 "liveServer.settings.useWebExt": true,
-"liveServer.settings.donotVerifyTags": true,
 "liveServer.settings.donotShowInfoMsg": true,
+"liveServer.settings.CustomBrowser": "firefox",
+
 "git.autofetch": true,
 "extensions.ignoreRecommendations": false,
 }
