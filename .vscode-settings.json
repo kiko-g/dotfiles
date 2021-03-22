@@ -250,7 +250,7 @@
         "scope": "variable.other.readwrite",
         "settings": {
           "fontStyle": "",
-          "foreground": "#d5ece9"
+          "foreground": "#9bd2ff"
         }
       },
       {
@@ -596,12 +596,16 @@
     "primitives": "environment",
     "cmake-build-debug": "dist",
     "cmake-build-default": "dist",
-    "feup": "dist"
+    "feup": "dist",
+    "Calculator": "functions"
   },
   "material-icon-theme.files.associations": {
     "*.db": "database",
     "*.vert": "shaderlab",
-    "*.frag": "shaderlab"
+    "*.frag": "shaderlab",
+    "*.class": "drone",
+    "*.jjt": "",
+    "*.jj": ""
   },
   "files.exclude": {
     "**/.classpath": true,
@@ -612,7 +616,9 @@
 
   // -------------------------------- PROLOG --------------------------------
   "files.associations": {
-    "*.pl": "prolog"
+    "*.pl": "prolog",
+    "*.jj": "java",
+    "*.jjt": "java"
   },
 
   // --------------------------------- DART ---------------------------------
@@ -623,6 +629,8 @@
   "git.enabled": true,
   "git.enableSmartCommit": true,
   "git.decorations.enabled": false,
+  "editor.tabSize": 4,
+  "[java]": {},
   "[javascript]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -631,13 +639,15 @@
     "editor.tabSize": 2
   },
   "[html]": {
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[php]": {
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
   "liveServer.settings.donotShowInfoMsg": true,
-  "liveServer.settings.CustomBrowser": "firefox",
+  "liveServer.settings.CustomBrowser": "chrome",
 
   "git.autofetch": true,
   "extensions.ignoreRecommendations": false,
@@ -647,12 +657,17 @@
     {
       "viewType": "analyticsignal.preview-pdf",
       "filenamePattern": "*.pdf"
+    },
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
     }
   ],
   "liveServer.settings.wait": 200,
   "intelephense.environment.documentRoot": "",
 
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-  "liveshare.authenticationProvider": "GitHub"
+  "liveshare.authenticationProvider": "GitHub",
+  "latex-workshop.message.update.show": false
   // "terminal.integrated.shell.windows": "C:\\Program Files\\SICStus Prolog VC16 4.6.0\\bin\\sicstus-4.6.0.exe",
 }
