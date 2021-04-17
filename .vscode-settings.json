@@ -1,6 +1,5 @@
 {
   /* ------------------------ WORKBENCH COLOR CUSTOMIZATIONS ------------------------ */
-  // "workbench.colorTheme": "Syntax Dark",
   "workbench.colorCustomizations": {
     "activityBar.border": "#151e22",
     "activityBar.background": "#151e22",
@@ -552,6 +551,8 @@
   // "editor.rulers": [120],
   "editor.quickSuggestionsDelay": 20,
   "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.fontWeightBold": "500",
   "editor.cursorBlinking": "phase",
   "editor.suggestSelection": "first",
   "editor.multiCursorModifier": "ctrlCmd",
@@ -562,7 +563,6 @@
   "editor.overviewRulerBorder": false,
   "editor.cursorSmoothCaretAnimation": true,
   "editor.fontSize": 13,
-  "editor.fontWeight": "400",
   "editor.fontFamily": "JetBrains Mono, Consolas",
 
   "workbench.iconTheme": "material-icon-theme",
@@ -635,6 +635,10 @@
     "editor.tabSize": 2,
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
+  "[python]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": null
+  },
   "[css]": {
     "editor.tabSize": 2
   },
@@ -647,7 +651,7 @@
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
   "liveServer.settings.donotShowInfoMsg": true,
-  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.CustomBrowser": "firefox",
 
   "git.autofetch": true,
   "extensions.ignoreRecommendations": false,
@@ -666,7 +670,7 @@
   "liveServer.settings.wait": 200,
   "intelephense.environment.documentRoot": "",
 
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
   "liveshare.authenticationProvider": "GitHub",
   "latex-workshop.message.update.show": false
   // "terminal.integrated.shell.windows": "C:\\Program Files\\SICStus Prolog VC16 4.6.0\\bin\\sicstus-4.6.0.exe",

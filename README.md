@@ -1,2 +1,6 @@
-# dotfiles
-Collection of my dotfiles 
+# Dotfiles
+
+Collection of my dotfiles
+
+- [settings.json](.vscode-settings.json)
+- [.bashrc](.bashrc)
