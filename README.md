@@ -2,5 +2,6 @@
 
 Collection of my dotfiles
 
-- [settings.json](.vscode-settings.json)
-- [.bashrc](.bashrc)
+- [BashRC](.bashrc)
+- [VS Code Settings](.vscode-settings.json)
+- [Powershell Profile](.powershell.ps1)
