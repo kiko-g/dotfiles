@@ -1,21 +1,26 @@
 # -------------------- CUSTOM ALIAS --------------------
-## 
 alias editconfig='base=$(pwd); cd ~; code ~/.bashrc; cd $base'
 alias readconfig='base=$(pwd); cd ~; source ~/.bashrc; cd $base'
 alias start='cmd.exe /c start cmd.exe /c wsl.exe'
 alias python=python3.9
 alias pip='python3.9 -m pip'
+alias explorer='explorer.exe'
+alias npmfix='sudo npm install npm@latest -g'
 
-alias cdlbaw='cd /mnt/d/FEUP/LBAW'
+# change directory WSL
+alias docs='cd ~/Documents'
+alias lbaw='cd ~/Documents/mieic/lbaw2132'
+alias fhub='cd ~/Documents/finishers-hub'
+
+# change directory (D:)
+alias dev='cd /mnt/d/dev'
+alias cdcomp='cd /mnt/d/FEUP/LBAW'
 alias cdcomp='cd /mnt/d/FEUP/COMP/comp2021-1a'
-alias cdsdis='cd /mnt/d/FEUP/SDIS/Projects/proj1'
+alias cdsdis='cd /mnt/d/FEUP/SDIS'
 alias cdfeup='cd /mnt/d/FEUP/'
-alias grind='cd /mnt/d/Arena'
-alias emoji='code /mnt/d/Arena/git-emojis.md'
+alias emoji='code /mnt/d/dev/git-emojis.md'
 
-alias lbaw-start='docker run -it -p 8000:80 -v $PWD/html:/var/www/html lbaw2132/lbaw2132-piu'
-alias lbaw-run='docker container start wonderful_goldberg'
-
+# git
 alias gs='git status -s'
 alias ga='git add -A'
 alias gl='git log --all --decorate --oneline --graph'
@@ -145,3 +150,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
