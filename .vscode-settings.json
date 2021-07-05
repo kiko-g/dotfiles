@@ -13,7 +13,7 @@
   },
   "[json]": {
     "editor.quickSuggestions": {
-      "strings": true
+      "strings": true,
     },
     "editor.suggest.insertMode": "replace",
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -23,7 +23,7 @@
   },
   "[javascript]": {
     "editor.tabSize": 4,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": ""
   },
   "[python]": {
     "editor.tabSize": 2,
@@ -47,6 +47,7 @@
     "editor.defaultFormatter": "shufo.vscode-blade-formatter",
     "editor.formatOnSave": false
   },
+
   // NOTE GENERAL
   "kite.showWelcomeNotificationOnStartup": false,
   "editor.quickSuggestionsDelay": 20,
@@ -75,7 +76,7 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.CustomBrowser": "firefox",
   "extensions.ignoreRecommendations": false,
-  "terminal.integrated.defaultProfile.windows": "C:\\WINDOWS\\System32\\wsl.exe",
+  "terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
   "diffEditor.ignoreTrimWhitespace": false,
   "dart.closingLabels": true,
   "git.enabled": true,
@@ -85,13 +86,14 @@
   "git.confirmSync": false,
   "editor.tabSize": 4,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
   "intelephense.environment.documentRoot": "",
   "bladeFormatter.format.indentSize": 2,
   "bladeFormatter.format.enabled": true,
   "intelephense.format.enable": true,
   // "editor.rulers": [120],
   // "terminal.integrated.shell.windows": "C:\\Program Files\\SICStus Prolog VC16 4.6.0\\bin\\sicstus-4.6.0.exe",
+
   // NOTE ICONS
   "material-icon-theme.saturation": 1,
   "material-icon-theme.folders.color": "#ef5350",
@@ -175,9 +177,8 @@
     "javascript": "jsx"
   },
   "python.pythonPath": "/usr/bin/python3",
-  "python.analysis.extraPaths": [
-    "/usr/bin/python3"
-  ],
+  "python.analysis.extraPaths": ["/usr/bin/python3"],
+
   // NOTE EDITOR COLORS
   "workbench.colorCustomizations": {
     "foreground": "#e9f3ff",
@@ -267,19 +268,15 @@
         }
       },
       {
-        "scope": [
-          "meta"
-        ],
+        "scope": ["meta"],
         "settings": {
           "foreground": "#eee"
         }
       },
       {
-        "scope": [
-          "entity.name.tag.js"
-        ],
+        "scope": ["entity.name.tag.js"],
         "settings": {
-          "foreground": "#f1b883"
+          "foreground": "#fbaa8a"
         }
       },
       {
@@ -387,7 +384,7 @@
         "name": "Default keyword",
         "scope": "keyword.control.default",
         "settings": {
-          "foreground": "#8dffc2"
+          "foreground": "#8a9cff" //8dffc2
         }
       },
       {
@@ -504,6 +501,7 @@
           "fontStyle": ""
         }
       },
+
       {
         "name": "Support function (inner system functions)",
         "scope": "support.function",
@@ -515,9 +513,10 @@
         "name": "Function",
         "scope": "entity.name.function",
         "settings": {
-          "foreground": "#39c9b3"
+          "foreground": "#c4ffeb"
         }
       },
+
       {
         "name": "Class color",
         "scope": "entity.name.type",
@@ -541,6 +540,7 @@
           "foreground": "#1bd8bc"
         }
       },
+
       {
         "name": "vector, set",
         "scope": "entity.name.class.template",
@@ -555,6 +555,7 @@
           "foreground": "#a5f790"
         }
       },
+
       {
         "scope": "keyword.operator",
         "settings": {
@@ -602,6 +603,7 @@
           "foreground": "#64acff"
         }
       },
+
       {
         "name": "macros",
         "scope": "entity.name.function.preprocessor",
@@ -618,11 +620,12 @@
           "foreground": "#f3f3f3c5"
         }
       },
+
       {
         "name": "markup language tags color (html tag)",
         "scope": "entity.name.tag",
         "settings": {
-          "foreground": "#ffc7a2" //ffa76d ffa6a6
+          "foreground": "#ffb497" //ffa76d ffa6a6
         }
       },
       {
@@ -653,6 +656,7 @@
           "foreground": "#88ffb9"
         }
       },
+
       {
         "name": "Numbers",
         "scope": "constant.numeric",
@@ -694,6 +698,7 @@
           "foreground": "#ffddaa"
         }
       },
+
       {
         "scope": "markup",
         "settings": {
@@ -722,6 +727,7 @@
           "foreground": "#649df1"
         }
       },
+
       {
         "name": "coloring of the Java import and package identifiers",
         "scope": [
@@ -735,5 +741,8 @@
       }
     ]
   },
+  // "editor.suggest.preview": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "security.workspace.trust.untrustedFiles": "open",
   "window.zoomLevel": 1
 }
