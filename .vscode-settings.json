@@ -1,5 +1,5 @@
 {
-  //-- Languages Behavior
+  //@@ Languages Behavior
   "[md]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -14,16 +14,15 @@
     "editor.tabSize": 4
   },
   "[javascript]": {
-    "editor.tabSize": 4,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[python]": {
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": null
+    "editor.tabSize": 2
   },
   "[css]": {
     "editor.tabSize": 2,
-    "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
     "editor.tabSize": 2,
@@ -47,7 +46,7 @@
     "javascript": "jsx"
   },
 
-  //-- Icons and Files
+  //@@ Icons and Files
   "workbench.productIconTheme": "fluent-icons",
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.activeIconPack": "react",
@@ -124,7 +123,8 @@
     "*.ipynb": "jupyter.||book.ipynb"
   },
 
-  //-- Editor Colors
+  //@@ Editor Colors
+  // "editor.bracketPairColorization.enabled": true,
   "workbench.colorCustomizations": {
     "foreground": "#e9f3ff",
     "button.background": "#4D78CC",
@@ -158,9 +158,9 @@
     "terminal.background": "#2c333b",
     "terminal.foreground": "#ffffff",
     "terminal.ansiCyan": "#ffd582",
-    "terminal.ansiBlue": "#1e4a63",
+    "terminal.ansiBlue": "#46a4db",
     "terminal.ansiGreen": "#7bf1b2",
-    "terminal.ansiYellow": "#5ad493",
+    "terminal.ansiYellow": "#fff89d",
     "terminal.ansiMagenta": "#ff9b98",
     "statusBar.background": "#2c475e", // 4399df
     "statusBar.noFolderBackground": "#b2bbd630",
@@ -200,7 +200,7 @@
     "dart.closingLabels": "#ff7272d5"
   },
 
-  //-- Highlighting Colors
+  //@@ Highlighting Colors
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -219,12 +219,6 @@
         }
       },
       {
-        "scope": ["entity.name.tag.js"],
-        "settings": {
-          "foreground": "#fbaa8a"
-        }
-      },
-      {
         "scope": "entity.name.selector",
         "settings": {
           "foreground": "#9fe2e7"
@@ -236,6 +230,13 @@
         "settings": {
           "fontStyle": "",
           "foreground": "#ffb192"
+        }
+      },
+      {
+        "name": "strings",
+        "scope": "string",
+        "settings": {
+          "foreground": "#87c86d" //90ec74f0 c88e6d
         }
       },
       {
@@ -395,7 +396,15 @@
         "scope": "variable.other.readwrite",
         "settings": {
           "fontStyle": "",
-          "foreground": "#9bd2ff"
+          "foreground": "#bcefff"
+        }
+      },
+      {
+        "name": "Constant variables",
+        "scope": "variable.other.constant.object.js",
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#73dfd0" //ff9090 ffb0b0 ffa986 23beaa
         }
       },
       {
@@ -403,9 +412,10 @@
         "scope": "support.variable",
         "settings": {
           "fontStyle": "",
-          "foreground": "#00a58f" //ff9090 ffb0b0 ffa986 23beaa
+          "foreground": "#b95c5c" //ff9090 ffb0b0 ffa986 23beaa
         }
       },
+
       {
         "name": "Function parameter variables",
         "scope": "variable.parameter",
@@ -450,14 +460,24 @@
         "name": "Support function (inner system functions)",
         "scope": "support.function",
         "settings": {
-          "foreground": "#fb9e8b"
+          "foreground": "#fda08e"
         }
       },
       {
         "name": "Function",
         "scope": "entity.name.function",
         "settings": {
-          "foreground": "#c4ffeb"
+          "foreground": "#fff5c3" //7febc7s 569fff
+        }
+      },
+      {
+        "scope": [
+          "entity.name.tag.js",
+          "string.quasi.js",
+          "entity.name.function.member"
+        ],
+        "settings": {
+          "foreground": "#fbaa8a"
         }
       },
       {
@@ -465,7 +485,7 @@
         "scope": "entity.name.type",
         "settings": {
           "fontStyle": "",
-          "foreground": "#52e4a5" //ffb694
+          "foreground": "#4EC9B0" //ffb694
         }
       },
       {
@@ -480,7 +500,7 @@
         "name": "console keyword, flutter",
         "scope": "support.class",
         "settings": {
-          "foreground": "#1bd8bc"
+          "foreground": "#18a590"
         }
       },
       {
@@ -627,7 +647,7 @@
         "name": "Other constants (prolog predicate)",
         "scope": "constant.other",
         "settings": {
-          "foreground": "#69c9a9"
+          "foreground": "#6d8ecc"
         }
       },
       {
@@ -678,7 +698,7 @@
     ]
   },
 
-  //-- Editor Settings
+  //@@ Editor Settings
   "editor.quickSuggestionsDelay": 20,
   "editor.cursorBlinking": "phase",
   "editor.suggestSelection": "first",
@@ -689,7 +709,7 @@
   "editor.renderIndentGuides": true,
   "editor.overviewRulerBorder": false,
   "editor.cursorSmoothCaretAnimation": true,
-  "editor.fontSize": 13,
+  "editor.fontSize": 12.5,
   "editor.fontFamily": "JetBrains Mono, Roboto Mono Medium, Consolas",
   "workbench.tree.renderIndentGuides": "none",
   "workbench.startupEditor": "newUntitledFile",
@@ -709,20 +729,20 @@
   "editor.tabSize": 4,
   "editor.formatOnSave": true,
 
-  //-- Git Settings
+  //@@ Git Settings
   "git.enabled": true,
   "git.enableSmartCommit": true,
   "git.decorations.enabled": false,
   "git.autofetch": true,
   "git.confirmSync": false,
 
-  //-- Terminal Settings
-  "terminal.integrated.fontSize": 16,
+  //@@ Terminal Settings
+  "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontWeight": "normal",
   "terminal.integrated.fontWeightBold": "500",
-  "terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
+  "terminal.integrated.defaultProfile.windows": "PowerShell", //Ubuntu-20.04 (WSL)
 
-  //-- General Settings
+  //@@ General Settings
   "kite.showWelcomeNotificationOnStartup": false,
   "explorer.sortOrder": "type",
   "zenMode.hideStatusBar": false,
@@ -745,10 +765,75 @@
   "python.analysis.extraPaths": ["/usr/bin/python3"],
   "todohighlight.keywords": [
     {
-      "text": "--",
+      "text": "@@",
       "color": "#ffffff",
-      "backgroundColor": "#458b6d44",
+      "backgroundColor": "#3399aa33",
       "isWholeLine": true
     }
-  ]
+  ],
+  "editor.linkedEditing": true,
+  "highlight.regexes": {
+    "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *TODO(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+      "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+      "decorations": [
+        {
+          "overviewRulerColor": "#ffcc00",
+          "backgroundColor": "#ffcc00",
+          "color": "#1f1f1f",
+          "fontWeight": "bold"
+        },
+        {
+          "backgroundColor": "#ffcc00",
+          "color": "#1f1f1f"
+        }
+      ]
+    },
+    "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:FIXME|FIX|BUG|UGLY|DEBUG|HACK)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+      "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+      "decorations": [
+        {
+          "overviewRulerColor": "#cc0000",
+          "backgroundColor": "#cc0000",
+          "color": "#1f1f1f",
+          "fontWeight": "bold"
+        },
+        {
+          "backgroundColor": "#cc0000",
+          "color": "#1f1f1f"
+        }
+      ]
+    },
+    "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:REVIEW|OPTIMIZE|TSC)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+      "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+      "decorations": [
+        {
+          "overviewRulerColor": "#00ccff",
+          "backgroundColor": "#00ccff",
+          "color": "#1f1f1f",
+          "fontWeight": "bold"
+        },
+        {
+          "backgroundColor": "#00ccff",
+          "color": "#1f1f1f"
+        }
+      ]
+    },
+    "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:IDEA)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+      "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+      "decorations": [
+        {
+          "overviewRulerColor": "#cc00cc",
+          "backgroundColor": "#cc00cc",
+          "color": "#1f1f1f",
+          "fontWeight": "bold"
+        },
+        {
+          "backgroundColor": "#cc00cc",
+          "color": "#1f1f1f"
+        }
+      ]
+    }
+  },
+  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "window.zoomLevel": 1
 }
