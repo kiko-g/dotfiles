@@ -134,7 +134,14 @@
         "scope": "storage.type",
         "settings": {
           "fontStyle": "",
-          "foreground": "#00aeff" //27b2f3 468cce
+          "foreground": "#3b9df8c5" //27b2f3 468cce
+        }
+      },
+      {
+        "name": "this / self",
+        "scope": "variable.language",
+        "settings": {
+          "foreground": "#3b9df8c5" //3b9cf8
         }
       },
       {
@@ -160,10 +167,10 @@
         }
       },
       {
-        "name": "escape characters \n\t\b",
+        "name": "escape characters \t\b",
         "scope": "constant.character.escape",
         "settings": {
-          "foreground": "#ffad99"
+          "foreground": "#ff9b82"
         }
       },
       {
@@ -201,40 +208,41 @@
         "scope": "support.variable",
         "settings": {
           "fontStyle": "",
-          "foreground": "#b95c5c" //ff9090 ffb0b0 ffa986 23beaa
+          "foreground": "#ffa6a6" //ff9090 ffb0b0 ffa986 23beaa
         }
       },
       {
-        "name": "Readwrite variables",
-        "scope": "variable.other.readwrite",
-        "settings": {
-          "fontStyle": "",
-          "foreground": "#ffffff99"
-        }
-      },
-      {
-        "name": "Function parameter variables",
-        "scope": "variable.parameter",
-        "settings": {
-          "fontStyle": "bold",
-          "foreground": "#ffffff"
-        }
-      },
-      {
-        "name": "Variable other",
+        "name": "Variables",
         "scope": [
+          "variable.other.readwrite",
+          "variable.readwrite",
+          "variable.readwrite.other.block",
           "variable.other",
           "variable.other.object",
           "variable.other.global",
           "variable.other.readwrite.class",
           "variable.other.readwrite.instance",
-          "variable.other.readwrite.batchfile",
-          "variable.readwrite",
-          "variable.readwrite.other.block"
+          "variable.other.readwrite.batchfile"
         ],
         "settings": {
           "fontStyle": "",
+          "foreground": "#bae8fd"
+        }
+      },
+      {
+        "name": "Other Variables",
+        "scope": [],
+        "settings": {
+          "fontStyle": "",
           "foreground": "#FFFFFFDD"
+        }
+      },
+      {
+        "name": "Parameter variables",
+        "scope": "variable.parameter",
+        "settings": {
+          "fontStyle": "bold underline",
+          "foreground": "#ffffff"
         }
       },
       {
@@ -249,7 +257,7 @@
         "name": "Function",
         "scope": "entity.name.function",
         "settings": {
-          "foreground": "#e5c07b" //7febc7s 569fff
+          "foreground": "#eecb89" //7febc7s 569fff e5c07b
         }
       },
       {
