@@ -1,7 +1,13 @@
 {
   //@@ Languages Behavior
-  "[md]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 110
+  },
+  "[mdx]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "on"
   },
   "[jsonc]": {
     "editor.quickSuggestions": {
@@ -25,6 +31,10 @@
     "editor.tabSize": 2,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[scss]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[html]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "vscode.html-language-features"
@@ -41,13 +51,64 @@
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
+    "javascript": "javascriptreact",
+    "postcss": "css"
   },
   "emmet.syntaxProfiles": {
-    "javascript": "jsx"
+    "javascript": "jsx",
+    "postcss": "css"
   },
-
+    "prettier.tabWidth": 2,
+  "prettier.printWidth": 100,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.defaultInterpreterPath": "/usr/local/bin/python3.9",
+  
+  // @@ Highlighting
+  "highlight-matching-tag.styles": {
+    //opening tag
+    "closing": {
+      "full": { "highlight": "", "surround": "", "underline": "" },
+      "left": { "highlight": "", "surround": "", "underline": "" },
+      "name": { "highlight": "#d1ffe650", "surround": "", "underline": "#d1ffe690" },
+      "right": { "highlight": "", "surround": "", "underline": "" }
+    },
+    //opening tag
+    "opening": {
+      "full": { "highlight": "", "surround": "", "underline": "" },
+      "left": { "highlight": "", "surround": "", "underline": "" },
+      "name": { "highlight": "#d1ffe650", "surround": "", "underline": "#d1ffe690" },
+      "right": { "highlight": "", "surround": "", "underline": "" }
+    },
+    //inner context of tag pair
+    "inner": {
+      "highlight": "",
+      "surround": "",
+      "underline": ""
+    }
+  },
+  
+  "todohighlight.keywords": [
+    {
+      "text": "@@",
+      "color": "#ffffff",
+      "backgroundColor": "#E5C07B70",
+      "overviewRulerColor": "#E5C07B40",
+      "isWholeLine": true,
+    },
+    {
+      "text": "!!!",
+      "color": "#ffffff",
+      "backgroundColor": "#61AFEF70",
+      "overviewRulerColor": "#61AFEF40",
+      "isWholeLine": true
+    }
+  ],
+  
   //@@ Editor Colors
+  "workbench.colorTheme": "Atom One Dark",
+  "editor.semanticHighlighting.enabled": false,
   "editor.bracketPairColorization.enabled": false,
   "workbench.colorCustomizations": {
     "foreground": "#e9f3ff",
@@ -110,7 +171,7 @@
     "editor.lineHighlightBackground": "#bee4ff20", //line background
     "editor.lineHighlightBorder": "#00000000", //line border
     "editorLineNumber.foreground": "#9ca9b1", //line number
-    "editor.selectionBackground": "#99fcff3d", //selection
+    "editor.selectionBackground": "#daf0ff30", //selection / closed tags
     "editor.findMatchHighlightBorder": "#ff000000",
     "editor.findMatchBackground": "#00ff953a", //search match (CTRL + F)
     "editor.findMatchHighlightBackground": "#44ffb721",
@@ -125,16 +186,24 @@
   },
 
   // @@ Highlighting Colors
-  "workbench.colorTheme": "One Monokai",
+  // "workbench.colorTheme": "One Monokai",
   "editor.tokenColorCustomizations": {
     "textMateRules": [
-      // !! Crucial
+      // !!! General
       {
         "name": "int, float, char, var, let",
         "scope": "storage.type",
         "settings": {
           "fontStyle": "",
           "foreground": "#3b9df8c5" //27b2f3 468cce
+        }
+      },
+      {
+        "name": "json scopes",
+        "scope": "support.type.property-name.json.comments",
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#99ceffdd" //27b2f3 468cce
         }
       },
       {
@@ -192,7 +261,7 @@
         "name": "markup language tags color (html tag)",
         "scope": "entity.name.tag",
         "settings": {
-          "foreground": "#72cf8e" //ffa76d ffa6a6 ffb497
+          "foreground": "#f8a495" //ffa76d ffa6a6 ffb497
         }
       },
       {
@@ -205,10 +274,17 @@
       },
       {
         "name": "Support variables",
-        "scope": "support.variable",
+        "scope": ["support.variable", "variable.other.object.js"],
         "settings": {
           "fontStyle": "",
           "foreground": "#ffa6a6" //ff9090 ffb0b0 ffa986 23beaa
+        }
+      },
+      {
+        "name": "constant variable",
+        "scope": "variable.other.constant",
+        "settings": {
+          "foreground": "#adbdce"
         }
       },
       {
@@ -226,7 +302,7 @@
         ],
         "settings": {
           "fontStyle": "",
-          "foreground": "#bae8fd"
+          "foreground": "#c3ecff"
         }
       },
       {
@@ -239,18 +315,10 @@
       },
       {
         "name": "Parameter variables",
-        "scope": "variable.parameter",
+        "scope": ["variable.parameter"],
         "settings": {
-          "fontStyle": "bold underline",
+          "fontStyle": "bold",
           "foreground": "#ffffff"
-        }
-      },
-      {
-        "name": "constant variable",
-        "scope": "variable.other.constant",
-        "settings": {
-          "foreground": "#88bbdd",
-          "fontStyle": ""
         }
       },
       {
@@ -258,6 +326,13 @@
         "scope": "entity.name.function",
         "settings": {
           "foreground": "#eecb89" //7febc7s 569fff e5c07b
+        }
+      },
+      {
+        "name": "Function JSX",
+        "scope": "entity.name.function.jsx",
+        "settings": {
+          "foreground": "#b0ffe5" //7febc7s 569fff e5c07b
         }
       },
       {
@@ -274,7 +349,73 @@
           "foreground": "#ff8b83" //ff635e ff9a9a
         }
       },
-      // !! Important
+      // !!! CSS
+      {
+        "name": "css: px, rem, vh",
+        "scope": ["constant.numeric.css"],
+        "settings": {
+          "foreground": "#b1ffd0" //27b2f3 468cce
+        }
+      },
+      {
+        "name": "css: px, rem, vh",
+        "scope": ["keyword.other.unit"],
+        "settings": {
+          "foreground": "#abd6bc" //27b2f3 468cce
+        }
+      },
+      {
+        "name": "css property",
+        "scope": ["support.type.property-name.css"],
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#9CDCFE" //27b2f3 468cce
+        }
+      },
+      {
+        "name": "css selector",
+        "scope": ["entity.name.tag.css"],
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#6695d3" //61ebb1 f69679 CA8FE5 27b2f3 468cce
+        }
+      },
+      {
+        "name": "css class",
+        "scope": ["entity.other.attribute-name.class.css"],
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#6695d3" //61ebb1 27b2f3 468cce
+        }
+      },
+      {
+        "name": "css pseudo element",
+        "scope": [
+          "entity.other.attribute-name.pseudo-class.css",
+          "entity.other.attribute-name.pseudo-element.css"
+        ],
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#96a2ad" //CA8FE5 27b2f3 468cce
+        }
+      },
+      {
+        "name": "css string value",
+        "scope": ["support.constant.property-value.css", "support.constant.font-name.css"],
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#84bd6c" //27b2f3 468cce
+        }
+      },
+      {
+        "name": "css attribute",
+        "scope": ["entity.other.attribute-name.css"],
+        "settings": {
+          "fontStyle": "bold",
+          "foreground": "#f3a294" //27b2f3 468cce
+        }
+      },
+      // !!! Important
       {
         "name": "extends, const",
         "scope": "storage.modifier",
@@ -326,23 +467,23 @@
         }
       },
       {
-        "name": "Default keyword",
-        "scope": "keyword.control.default",
-        "settings": {
-          "foreground": "#8a9cff" //8dffc2
-        }
-      },
-      {
         "scope": "entity.name.selector",
         "settings": {
           "foreground": "#9fe2e7"
         }
       },
       {
+        "name": "Default keyword",
+        "scope": "keyword.control.default",
+        "settings": {
+          "foreground": "#CA8FE5" //72ddb9 8dffc2
+        }
+      },
+      {
         "name": "Case keyword",
         "scope": "keyword.control.case",
         "settings": {
-          "foreground": "#8dffc2"
+          "foreground": "#CA8FE5" //8dffc2
         }
       },
       {
@@ -378,7 +519,7 @@
         "scope": "comment",
         "settings": {
           "fontStyle": "",
-          "foreground": "#daffe34d" //869289 718280
+          "foreground": "#daffe360" //869289 718280
         }
       },
       {
@@ -421,7 +562,15 @@
         "scope": "entity.name.type",
         "settings": {
           "fontStyle": "",
-          "foreground": "#4EC9B0" //ffb694
+          "foreground": "#4bd1b6" //ffb694
+        }
+      },
+      {
+        "name": "Class color",
+        "scope": "support.class.component.js",
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#5fc7b2" //ffb694 73ddc8
         }
       },
       {
@@ -550,40 +699,12 @@
         "settings": {
           "foreground": "#3ea38d"
         }
-      },
-      {
-        "scope": "markup",
-        "settings": {
-          "fontStyle": "",
-          "foreground": "#c4f8ff"
-        }
-      },
-      {
-        "scope": "markup.heading",
-        "settings": {
-          "fontStyle": "",
-          "foreground": "#2db475"
-        }
-      },
-      {
-        "scope": "markup.list.numbered",
-        "settings": {
-          "fontStyle": "",
-          "foreground": "#ffbcb7"
-        }
-      },
-      {
-        "scope": "markup.bold",
-        "settings": {
-          "fontStyle": "bold",
-          "foreground": "#649df1"
-        }
       }
     ]
   },
-
-  //@@ Icons and Files
-  "workbench.productIconTheme": "fluent-icons",
+  
+  
+  // @@ Icons
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.activeIconPack": "react",
   "material-icon-theme.saturation": 1,
@@ -657,7 +778,7 @@
     "*.png": "imagePreview.previewEditor",
     "*.pdf": "analyticsignal.preview-pdf",
     "*.ipynb": "jupyter.||book.ipynb"
-  },
+  },*/
 
   //@@ Editor Settings
   "editor.quickSuggestionsDelay": 20,
@@ -688,7 +809,6 @@
   "editor.wordBasedSuggestions": true, // Enable word based suggestions
   "editor.parameterHints.enabled": true, // Enable parameter hints
   "editor.tabSize": 4,
-  "editor.formatOnSave": true,
 
   //@@ Git Settings
   "git.enabled": true,
@@ -702,11 +822,14 @@
   "terminal.integrated.fontWeight": "normal",
   "terminal.integrated.fontWeightBold": "500",
   "terminal.integrated.defaultProfile.windows": "PowerShell", //Ubuntu-20.04 (WSL)
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.drawBoldTextInBrightColors": false,
+  "terminal.integrated.experimentalLinkProvider": false,
+  "terminal.integrated.rendererType": "auto",
 
   //@@ General Settings
   "kite.showWelcomeNotificationOnStartup": false,
   "explorer.sortOrder": "type",
-  "zenMode.hideStatusBar": false,
   "C_Cpp.updateChannel": "Insiders",
   "C_Cpp.enhancedColorization": "Enabled",
   "atomKeymap.promptV3Features": true,
@@ -715,6 +838,7 @@
   "extensions.ignoreRecommendations": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "dart.closingLabels": true,
+  "dart.sdkPath": "C:\\Program Files\\Dart\\dart-sdk\\bin\\dart.exe",
   "intelephense.environment.documentRoot": "",
   "bladeFormatter.format.indentSize": 2,
   "bladeFormatter.format.enabled": true,
@@ -724,22 +848,5 @@
   "tabnine.experimentalAutoImports": true,
   "python.pythonPath": "/usr/bin/python3",
   "python.analysis.extraPaths": ["/usr/bin/python3"],
-  "todohighlight.keywords": [
-    {
-      "text": "@@",
-      "color": "#ffffff",
-      "backgroundColor": "#3399aa22",
-      "isWholeLine": true
-    },
-    {
-      "text": "!!",
-      "color": "#ffffff",
-      "backgroundColor": "#ff99aa22",
-      "isWholeLine": true
-    }
-  ],
   "editor.linkedEditing": true,
-  "window.zoomLevel": 1,
-  "prettier.tabWidth": 2,
-  "prettier.printWidth": 100
 }
