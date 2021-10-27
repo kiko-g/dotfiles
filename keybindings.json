@@ -1,1 +1,43 @@
-/mnt/c/Users/Kiko/AppData/Roaming/Code/User/keybindings.json
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+k ctrl+o",
+    "command": "-workbench.action.files.openFolder"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.files.openLocalFolder",
+    "when": "remoteFileDialogVisible"
+  },
+  {
+    "key": "ctrl+k ctrl+o",
+    "command": "-workbench.action.files.openLocalFolder",
+    "when": "remoteFileDialogVisible"
+  },
+  {
+    "key": "ctrl+shift+n ctrl+shift+o",
+    "command": "workbench.action.files.openFolderInNewWindow"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.files.openFolder"
+  },
+  {
+    "key": "ctrl+shift+[Comma]",
+    "command": "workbench.action.openSettingsJson"
+  },
+  {
+    "key": "alt+oem_comma alt+oem_period",
+    "command": "editor.action.inspectTMScopes"
+  },
+  {
+    "key": "ctrl+shift+oem_2",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+a",
+    "command": "-editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  }
+]
