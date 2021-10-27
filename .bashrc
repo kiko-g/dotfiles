@@ -10,23 +10,26 @@ alias fsi='cd ~/Documents/feup/fsi'
 alias sdle='cd ~/Documents/feup/sdle'
 alias wsdl='cd ~/Documents/feup/wsdl'
 
-# shortcuts
+# program shortcuts
 alias clip='clip.exe'
-alias python=python3.9
-alias pip='python3.9 -m pip'
 alias explorer='explorer.exe'
-alias npmfix='sudo npm install npm@latest -g'
 alias start='cmd.exe /c start cmd.exe /c wsl.exe'
+alias python='python3.9'
+alias pip='python3.9 -m pip'
+
+# auxiliar
+alias npmfix='sudo npm install npm@latest -g'
 alias emoji='code ~/Documents/resources/emoji.md'
 
 # git shortcuts
-alias gs='git status -s'
 alias ga='git add -A'
+alias gs='git status'
+alias gss='git status -s'
 alias gl='git log --all --decorate --oneline --graph'
 alias gp='git pull'
+alias gpo='git push origin '
 alias gb='git branch'
 alias gm='git commit -m'
-alias gpo='git push origin '
 alias gpa='git branch -r | grep -v "\->" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done; git fetch --all; git pull --all'
 alias gprune='git remote prune origin'
 
