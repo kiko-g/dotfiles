@@ -1,14 +1,23 @@
+# general
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# git shortcuts
+alias grr='git rm --cached'
+alias grrf='git rm -r --cached'
+alias gpa='git branch -r | grep -v "\->" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done; git fetch --all; git pull --all'
+
 # shortcuts
 alias edit-bashrc='code ~/.bashrc'
 alias read-bashrc='source ~/.bashrc'
+alias cat-zshrc='cat ~/.zshrc | clip.exe'
 alias edit-zshrc='code ~/.zshrc'
 alias read-zshrc='source ~/.zshrc'
 alias code-ohmyzsh='code ~/.oh-my-zsh'
 alias emoji='code ~/Documents/resources/emoji.md'
+alias docker-crl='docker system prune --all'
+alias kill-port='sudo netstat -plten | grep'
 
 # change directory
 alias docs='cd ~/Documents'
@@ -17,6 +26,10 @@ alias pfl='cd ~/Documents/feup/pfl'
 alias fsi='cd ~/Documents/feup/fsi'
 alias sdle='cd ~/Documents/feup/sdle'
 alias wsdl='cd ~/Documents/feup/wsdl'
+alias hck='cd ~/Documents/feup/wsdl/HealthChecker/frontend'
+alias sim='cd ~/Documents/ds-meic1/simulation'
+alias simb='cd ~/Documents/ds-meic1/simulation/backend'
+alias simf='cd ~/Documents/ds-meic1/simulation/frontend'
 
 # program shortcuts
 alias clip='clip.exe'
@@ -24,10 +37,7 @@ alias explorer='explorer.exe'
 alias start='cmd.exe /c start cmd.exe /c wsl.exe'
 alias python='python3.9'
 alias pip='python3.9 -m pip'
-
-# git extra shortcuts
-alias grr='git rm --cached'
-alias grrf='git rm -r --cached'
+alias ghci='/opt/ghc/bin/ghci-9.0.1'
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -137,4 +147,3 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
