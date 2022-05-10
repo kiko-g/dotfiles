@@ -4,32 +4,54 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # git shortcuts
-alias grr='git rm --cached'
-alias grrf='git rm -r --cached'
+alias gc='git commit'
+alias grc='git rm --cached'
+alias grcr='git rm -r --cached'
+alias gphm='git push heroku main'
 alias gpa='git branch -r | grep -v "\->" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done; git fetch --all; git pull --all'
+gdl() { git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done }
+
+# docker shortcuts
+alias dockps='docker ps'
+alias dockup='docker compose up'
+alias dockupdev='docker compose -f docker-compose.dev.yml up'
+alias dockdown='docker compose down'
+alias dockstop='docker compose stop'
+alias dockbuild='docker compose build'
+alias dockcrl='docker system prune --all'
+docksh() { docker exec -it $1 /bin/bash; }
+dockshx() { docker exec -it $(docker ps | grep $1 | head -c 2) sh }
+dockcrlimg() { docker rmi -f $(docker images -a -q) }
+dockcrlvol() { docker volume rm $(docker volume ls -q) }
+alias dockcrlall='docker compose stop; docker compose down; dockcrl; dockcrlimg; dockcrlvol'
+
+# manipulate zshrc
+alias cmds='cat ~/.zshrc | grep "alias "'
+alias catrc='cat ~/.zshrc'
+alias coderc='code ~/.zshrc'
+alias nanorc='nano ~/.zshrc'
+alias readrc='source ~/.zshrc'
+alias cliprc='cat ~/.zshrc | clip.exe'
+alias codeomz='code ~/.oh-my-zsh'
 
 # shortcuts
-alias edit-bashrc='code ~/.bashrc'
-alias read-bashrc='source ~/.bashrc'
-alias cat-zshrc='cat ~/.zshrc | clip.exe'
-alias edit-zshrc='code ~/.zshrc'
-alias read-zshrc='source ~/.zshrc'
-alias code-ohmyzsh='code ~/.oh-my-zsh'
 alias emoji='code ~/Documents/resources/emoji.md'
-alias docker-crl='docker system prune --all'
-alias kill-port='sudo netstat -plten | grep'
+alias ports='sudo netstat -plten'
+alias herokuhck='heroku logs --tail --app healthchecker-api'
+killport() { sudo kill -9 `sudo lsof -t -i:$1` }
+# assoauth() { curl -X POST -H "Content-Type: application/json" -d '{"username":"201704790","password":"pass"}' http://localhost:8080/authentication/register }
 
 # change directory
 alias docs='cd ~/Documents'
-alias ds='cd ~/Documents/feup/ds'
-alias pfl='cd ~/Documents/feup/pfl'
-alias fsi='cd ~/Documents/feup/fsi'
-alias sdle='cd ~/Documents/feup/sdle'
-alias wsdl='cd ~/Documents/feup/wsdl'
-alias hck='cd ~/Documents/feup/wsdl/HealthChecker/frontend'
-alias sim='cd ~/Documents/ds-meic1/simulation'
-alias simb='cd ~/Documents/ds-meic1/simulation/backend'
-alias simf='cd ~/Documents/ds-meic1/simulation/frontend'
+alias ds='cd ~/Documents/ds-meic1'
+alias mes='cd ~/Documents/feup/robin-mes'
+alias lgp='cd ~/Documents/feup/robin-mes'
+alias wiki='cd ~/Documents/feup/robin-mes.wiki'
+alias robin='cd ~/Documents/feup/robin-website'
+alias asso='cd ~/Documents/feup/uni4all'
+alias tts='cd ~/Documents/niaefeup/tts-revamp-fe'
+alias me='cd ~/Documents/kikogoncalves.me'
+alias fh='cd ~/Documents/finishershub'
 
 # program shortcuts
 alias clip='clip.exe'
@@ -38,6 +60,14 @@ alias start='cmd.exe /c start cmd.exe /c wsl.exe'
 alias python='python3.9'
 alias pip='python3.9 -m pip'
 alias ghci='/opt/ghc/bin/ghci-9.0.1'
+
+# temporary
+alias pflsync='pfld; git pull; pfl; cd workshops'
+alias pflcp='rm -rf /mnt/d/mieic/PFL/prolog; cp -r ~/Documents/feup/pfl/prolog /mnt/d/mieic/PFL'
+
+# backlog
+# gklb() { git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done }
+# cd path/to/frontend  # docker build -t simulation-frontend .  # docker run -d -p 3000:3000 simulation-frontend
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -147,3 +177,5 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
