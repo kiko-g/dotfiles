@@ -40,6 +40,7 @@ alias ports='sudo netstat -plten'
 alias herokuhck='heroku logs --tail --app healthchecker-api'
 killport() { sudo kill -9 `sudo lsof -t -i:$1` }
 # assoauth() { curl -X POST -H "Content-Type: application/json" -d '{"username":"201704790","password":"pass"}' http://localhost:8080/authentication/register }
+# find src -name "*.jsx" -exec sh -c 'mv "$0" "${0%.jsx}.tsx"' {} \;
 
 # change directory
 alias docs='cd ~/Documents'
