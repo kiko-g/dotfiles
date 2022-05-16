@@ -1,12 +1,12 @@
 {
-  /* @@@Editor Behavior */
+  /* @@@ Editor Behavior */
   "editor.fontSize": 12.5,
   "editor.fontFamily": "JetBrains Mono, monospace",
   "editor.cursorBlinking": "phase",
   "editor.suggestSelection": "first",
   "editor.multiCursorModifier": "ctrlCmd",
-  "editor.quickSuggestionsDelay": 20,
-  "editor.formatOnPaste": true,
+  "editor.quickSuggestionsDelay": 10,
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
   "editor.fontLigatures": false,
   "editor.minimap.enabled": false,
   "editor.overviewRulerBorder": false,
@@ -16,9 +16,12 @@
   "editor.suggestOnTriggerCharacters": true,
   "editor.tabCompletion": "off",
   "editor.suggest.localityBonus": true,
-  "editor.wordBasedSuggestions": true,
+  "editor.wordBasedSuggestions": false,
   "editor.parameterHints.enabled": true,
-  "editor.formatOnSave": true,
+  /* Format */
+  "editor.formatOnType": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.tabSize": 2,
   "editor.quickSuggestions": {
@@ -44,14 +47,14 @@
       "overviewRulerColor": "#FFFFFF22"
     },
     {
-      "text": "---",
+      "text": "***",
       "color": "white",
       "backgroundColor": "#43a58e",
       "isWholeLine": false,
       "overviewRulerColor": "#FFFFFF00"
     },
     {
-      "text": "***",
+      "text": "+++",
       "color": "#ffffff",
       "backgroundColor": "#c85454",
       "isWholeLine": false,
@@ -62,16 +65,48 @@
   /* @@@ Matching Tags */
   "highlight-matching-tag.styles": {
     "closing": {
-      "full": { "highlight": "", "surround": "", "underline": "" },
-      "left": { "highlight": "", "surround": "", "underline": "" },
-      "name": { "highlight": "#d1ffe650", "surround": "", "underline": "#d1ffe690" },
-      "right": { "highlight": "", "surround": "", "underline": "" }
+      "full": {
+        "highlight": "",
+        "surround": "",
+        "underline": ""
+      },
+      "left": {
+        "highlight": "",
+        "surround": "",
+        "underline": ""
+      },
+      "name": {
+        "highlight": "#d1ffe650",
+        "surround": "",
+        "underline": "#d1ffe690"
+      },
+      "right": {
+        "highlight": "",
+        "surround": "",
+        "underline": ""
+      }
     },
     "opening": {
-      "full": { "highlight": "", "surround": "", "underline": "" },
-      "left": { "highlight": "", "surround": "", "underline": "" },
-      "name": { "highlight": "#d1ffe650", "surround": "", "underline": "#d1ffe690" },
-      "right": { "highlight": "", "surround": "", "underline": "" }
+      "full": {
+        "highlight": "",
+        "surround": "",
+        "underline": ""
+      },
+      "left": {
+        "highlight": "",
+        "surround": "",
+        "underline": ""
+      },
+      "name": {
+        "highlight": "#d1ffe650",
+        "surround": "",
+        "underline": "#d1ffe690"
+      },
+      "right": {
+        "highlight": "",
+        "surround": "",
+        "underline": ""
+      }
     },
     "inner": {
       "highlight": "",
@@ -81,43 +116,89 @@
   },
 
   /* @@@ Languages */
-  "[md]": {},
-  "[java]": {},
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[env]": {
+    "editor.defaultFormatter": "IronGeek.vscode-env"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
   "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
   },
   "[python]": {
     "editor.defaultFormatter": "ms-python.python",
-    "editor.tabSize": 2
+    "editor.tabSize": 4,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 120,
+    "editor.formatOnSave": false
   },
-  "[css]": {},
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "css.validate": false,
   "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnSave": true
   },
   "[php]": {
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[blade]": {
     "editor.autoClosingBrackets": "always",
     "editor.defaultFormatter": "shufo.vscode-blade-formatter",
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
+  },
+  "[haskell]": {
+    "editor.defaultFormatter": "haskell.haskell",
+    "editor.bracketPairColorization.enabled": true
+  },
+  "[csharp]": {
+    // "editor.defaultFormatter": "ms-dotnettools.csharp",
+    "editor.tabSize": 4
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "editor.tabSize": 4
+  },
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[prolog]": {
+    "editor.formatOnType": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false
   },
   "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
+    "javascript": "javascriptreact",
+    "postcss": "css"
   },
   "emmet.syntaxProfiles": {
     "javascript": "jsx"
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
 
-  /* @@@ Editor Colors */
+  /* @@@ App Colors */
   "editor.semanticHighlighting.enabled": false,
   "editor.bracketPairColorization.enabled": false,
   "workbench.colorCustomizations": {
@@ -151,12 +232,7 @@
     "panel.background": "#2c333b",
     "terminal.border": "#e4ecf0",
     "terminal.background": "#2c333b",
-    "terminal.foreground": "#ffffff",
-    "terminal.ansiCyan": "#ffd582",
-    "terminal.ansiBlue": "#46a4db",
-    "terminal.ansiGreen": "#7bf1b2",
-    "terminal.ansiYellow": "#fff89d",
-    "terminal.ansiMagenta": "#ff9b98",
+    "terminal.foreground": "#eeeeee",
     "statusBar.background": "#2c475e", // 4399df
     "statusBar.noFolderBackground": "#b2bbd630",
     "statusBar.debuggingBackground": "#c24e43",
@@ -191,13 +267,15 @@
     "editorRuler.foreground": "#bef2ff10",
     "editorHoverWidget.background": "#1a1e22",
     "editorSuggestWidget.background": "#052430",
-    "editorSuggestWidget.selectedBackground": "#3d4d58"
+    "editorSuggestWidget.selectedBackground": "#3d4d58",
+    "gitlens.trailingLineForegroundColor": "#ffffff33"
   },
 
-  "workbench.colorTheme": "Default Dark+", // One Monokai, Atom One Dark, New Moon
+  /* @@@ Editor Colors */
+  // "workbench.colorTheme": "New Moon", // One Monokai, Atom One Dark, New Moon
   "editor.tokenColorCustomizations": {
     "textMateRules": [
-      /* --- General */
+      /* *** General */
       {
         "name": "Storage (int, float, var)",
         "scope": [
@@ -227,21 +305,21 @@
         "name": "Function",
         "scope": "entity.name.function",
         "settings": {
-          "foreground": "#FFDDAA" //7febc7 569fff e5c07b eecb89
+          "foreground": "#ffc0b0" //7febc7 569fff e5c07b eecb89 7fd8c6
         }
       },
       {
         "name": "Function Support",
         "scope": "support.function",
         "settings": {
-          "foreground": "#fda08e"
+          "foreground": "#FF8888"
         }
       },
       {
         "name": "Boolean",
         "scope": "constant.language",
         "settings": {
-          "foreground": "#ff8b83" //ff635e ff9a9a
+          "foreground": "#FF8888" //ff635e ff9a9a
         }
       },
       {
@@ -251,7 +329,7 @@
           "foreground": "#99ffcc" //b7ffc3 9dffad
         }
       },
-      /* --- Variables */
+      /* *** Variables */
       {
         "name": "Support variables",
         "scope": "support.variable",
@@ -274,34 +352,21 @@
           "foreground": "#ffffff"
         }
       },
-      //     {
-      //       "name": "Variables",
-      //       "scope": ["variable.other.object.js", "variable.other.readwrite.js"],
-      //       "settings": {
-      //         "fontStyle": "bold",
-      //         "foreground": "#abbac9"
-      //       }
-      //     },
-      //     {
-      //       "name": "Variables Alternate",
-      //       "scope": [
-      //         "variable.readwrite",
-      //         "variable.readwrite.other.block",
-      //         "variable.other",
-      //         "variable.other.readwrite",
-      //         "variable.other.readwrite.js",
-      //         "variable.other.object",
-      //         "variable.other.global",
-      //         "variable.other.readwrite.class",
-      //         "variable.other.readwrite.instance",
-      //         "variable.other.readwrite.batchfile",
-      //         "variable.other.readwrite.alias.js"
-      //       ],
-      //       "settings": {
-      //         "foreground": "#ffffffee"
-      //       }
-      //     },
-      /* --- Keywords */
+      {
+        "name": "Key Variable",
+        "scope": "meta.object-literal.key",
+        "settings": {
+          "foreground": "#B4C5CF"
+        }
+      },
+      {
+        "name": "Variable Property",
+        "scope": "variable.other.property.js",
+        "settings": {
+          "foreground": "#b4c5cf" //abbac9 ee8888
+        }
+      },
+      /* *** Keywords */
       {
         "name": "Keywords",
         "scope": ["keyword", "keyword.control", "keyword.other"],
@@ -316,7 +381,7 @@
           "foreground": "#b38de4"
         }
       },
-      /* --- Comments */
+      /* *** Comments */
       {
         "name": "Comment Line",
         "scope": "comment",
@@ -331,17 +396,17 @@
           "foreground": "#7799aaee" //90ac8e 82aaa4
         }
       },
-      /* --- Strings */
+      /* *** Strings */
       {
         "name": "String",
         "scope": "string",
         "settings": {
-          "foreground": "#E5C07B" //90ec74f0 c88e6d 87c86d
+          "foreground": "#9bffac" //90ec74f0 c88e6d 87c86d
         }
       },
       {
-        "name": "String accute quotes",
-        "scope": "string.template",
+        "name": "String accute and others",
+        "scope": ["string.template"], //, "string.quoted.double.yaml"
         "settings": {
           "foreground": "#E5C07B" //90ec74f0 c88e6d
         }
@@ -367,7 +432,7 @@
           "foreground": "#ff9b82"
         }
       },
-      /* --- Operators */
+      /* *** Operators */
       {
         "name": "logical operator",
         "scope": "keyword.operator.logical",
@@ -390,7 +455,7 @@
           "foreground": "#64acff"
         }
       },
-      /* --- HTML */
+      /* *** HTML */
       {
         "scope": "punctuation.definition.tag",
         "settings": {
@@ -406,7 +471,7 @@
       },
       {
         "name": "HTML Attribute",
-        "scope": "entity.other.attribute-name",
+        "scope": ["entity.other.attribute-name", "entity.name.tag.yaml"],
         "settings": {
           "foreground": "#88bbff" //85c4ff
         }
@@ -418,7 +483,7 @@
           "foreground": "#E5C07B" //ffe053
         }
       },
-      /* --- CSS */
+      /* *** CSS */
       {
         "name": "CSS Unit",
         "scope": ["keyword.other.unit"],
@@ -437,12 +502,12 @@
         "name": "CSS, HTML Selector",
         "scope": ["entity.name.tag.css"],
         "settings": {
-          "foreground": "#f8a495" //61ebb1 f69679 CA8FE5 27b2f3 468cce
+          "foreground": "#bbccdd" //61ebb1 f69679 CA8FE5 27b2f3 468cce
         }
       },
       {
-        "name": "CSS Class",
-        "scope": ["entity.other.attribute-name.class.css"],
+        "name": "CSS Class and ID",
+        "scope": ["entity.other.attribute-name.class.css", "entity.other.attribute-name.id.css"],
         "settings": {
           "foreground": "#6699ee" //61ebb1 27b2f3 468cce
         }
@@ -459,24 +524,127 @@
       },
       {
         "name": "CSS Value",
-        "scope": ["support.constant.property-value", "support.constant.font-name"],
+        "scope": [
+          "support.constant.color",
+          "support.constant.property-value",
+          "support.constant.font-name",
+          "support.constant.media"
+        ],
         "settings": {
-          "foreground": "#EE9999"
+          "foreground": "#EE9988"
         }
       },
-      /* --- Other */
-      {
-        "name": "Meta",
-        "scope": "meta",
-        "settings": {
-          "foreground": "#FFFFFFF5"
-        }
-      },
+      /* *** Other */
       {
         "name": "Macros",
         "scope": "entity.name.function.preprocessor",
         "settings": {
           "foreground": "#367ab3" //367ab3
+        }
+      },
+      {
+        "scope": "meta.indexed-name.python",
+        "settings": {
+          "foreground": "#33AA99"
+        }
+      },
+      {
+        "name": "Source Python and others",
+        "scope": [
+          "source.python",
+          "entity.name.function.haskell",
+          "meta.function-call.arguments.python"
+        ],
+        "settings": {
+          "foreground": "#e3eff5"
+        }
+      },
+      {
+        "name": "Source Python and others",
+        "scope": ["meta.function-call.generic.python"],
+        "settings": {
+          "foreground": "#ffccaa"
+        }
+      },
+      {
+        "scope": "meta.member.access.python",
+        "settings": {
+          "foreground": "#dd7777"
+        }
+      },
+      {
+        "scope": "meta.indexed-name.python",
+        "settings": {
+          "foreground": "#569CD6"
+        }
+      },
+      {
+        "name": "Meta + python punctuation",
+        "scope": [
+          "meta",
+          "punctuation.separator.colon.python",
+          "punctuation.parenthesis.begin.python",
+          "punctuation.parenthesis.end.python",
+          "punctuation.separator.element.python",
+          "punctuation.separator.period.python",
+          "punctuation.definition.list.begin.python",
+          "punctuation.definition.list.end.python",
+          "punctuation.definition.dict.begin.python",
+          "punctuation.definition.dict.end.python",
+          "punctuation.separator.dict.python",
+          "punctuation.separator.arguments.python",
+          "punctuation.separator.continuation.line.python",
+          "memberOperatorOverload"
+        ],
+        "settings": {
+          "foreground": "#fffffff0"
+        }
+      },
+      {
+        "scope": "constant.other.haskell",
+        "settings": {
+          "foreground": "#5ed6ae"
+        }
+      },
+      {
+        "scope": "string.quoted.docstring.multi.python",
+        "settings": {
+          "foreground": "#7799AA",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": ["entity.name.function.operator", "entity.name.function.operator.member.cpp"],
+        "settings": {
+          "foreground": "#FFFFFFF0"
+        }
+      },
+      {
+        "scope": "entity.name.function.fact.prolog",
+        "settings": {
+          "foreground": "#7ab0f6"
+        }
+      },
+      {
+        "scope": "constant.other.atom.simple.prolog",
+        "settings": {
+          "foreground": "#cbffe7"
+        }
+      },
+      {
+        "scope": [
+          "keyword.control.fact.end.prolog",
+          "keyword.control.clause.bodyend.prolog",
+          "keyword.control.clause.bodybegin.prolog"
+        ],
+        "settings": {
+          "foreground": "#468cce"
+        }
+      },
+      {
+        "scope": "constant.other.atom.quoted.prolog",
+        "settings": {
+          "foreground": "#9bffac"
         }
       }
     ]
@@ -492,17 +660,19 @@
     "ltw": "examples",
     "proj": "git",
     "labs": "test",
+    "p2p": "routes",
     "maps": "environment",
     "graph": "cluster",
     "anim": "animation",
     "forms": "php",
-    "actions": "php",
     "sections": "layout",
     "theory": "functions",
     "scenes": "views",
     "slides": "syntax",
     "studio": "cluster",
-    "projects": "src",
+    "actions": "Redux-actions",
+    "reducers": "Redux-reducer",
+    "workflows": "github",
     "midterms": "docs",
     "application": "app",
     "ajax": "json",
@@ -516,6 +686,7 @@
     "partials": "template"
   },
   "material-icon-theme.files.associations": {
+    "*.pickle": "database",
     "*.db": "database",
     "*.vert": "shaderlab",
     "*.frag": "shaderlab",
@@ -526,7 +697,9 @@
     "artisan": "php",
     "*.jjt": "",
     "*.jj": "",
-    "*.jjm": ""
+    "*.jjm": "",
+    "*.env*": "tune",
+    ".wslconfig": "tune"
   },
   "files.associations": {
     "*.pl": "prolog",
@@ -534,50 +707,43 @@
     "*.jj": "java",
     "*.jjt": "java",
     "*.j": "java",
-    "*.env.development": "env",
-    "*.env.production": "env",
-    "*.env_development": "env",
-    "*.env_production": "env",
     "*.blade.php": "blade",
     "*.in": "txt",
     "*.out": "txt",
     "*.input": "txt",
-    "*.output": "txt"
+    "*.output": "txt",
+    ".wslconfig": "environment",
+    ".env*": "env"
   },
   "files.exclude": {
+    "**/__pycache__": true,
     "**/.classpath": true,
+    "**/.factorypath": true,
     "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
+    "**/.settings": true
   },
   "workbench.editorAssociations": {
-    "*.jpg": "luna.editor",
-    "*.ico": "luna.editor",
     "*.png": "imagePreview.previewEditor",
-    "*.pdf": "analyticsignal.preview-pdf",
-    "*.ipynb": "jupyter.||book.ipynb"
+    "*.pdf": "analyticsignal.preview-pdf"
   },
-
   /* @@@ Git Settings */
   "git.enabled": true,
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "git.decorations.enabled": false,
-
   /* @@@ Terminal Settings */
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.fontWeight": "normal",
   "terminal.integrated.fontWeightBold": "400",
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
   "terminal.integrated.allowChords": false,
   "terminal.integrated.drawBoldTextInBrightColors": false,
   "terminal.integrated.experimentalLinkProvider": false,
-
   /* @@@ General Settings */
   "zenMode.hideStatusBar": false,
-  "C_Cpp.updateChannel": "Insiders",
   "C_Cpp.enhancedColorization": "Enabled",
+  "C_Cpp.codeFolding": "Enabled",
   "atomKeymap.promptV3Features": true,
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.CustomBrowser": "firefox",
@@ -590,7 +756,12 @@
   "security.workspace.trust.untrustedFiles": "open",
   "vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
   "tabnine.experimentalAutoImports": true,
-  "python.pythonPath": "/usr/bin/python3",
-  "python.analysis.extraPaths": ["/usr/bin/python3"],
+  "python.analysis.extraPaths": ["/usr/local/bin/python3.9", "/usr/bin/python3"],
+  "workbench.editor.untitled.hint": "hidden",
+  "liveServer.settings.donotVerifyTags": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "material-ui-snippets.showNotesOnStartup": false,
+  "gitlens.mode.active": "zen",
+  "git.ignoreRebaseWarning": true,
   "window.zoomLevel": 1
 }
