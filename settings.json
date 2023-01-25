@@ -129,7 +129,8 @@
 
   /* @@@ Languages */
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "[env]": {
     "editor.defaultFormatter": "IronGeek.vscode-env"
