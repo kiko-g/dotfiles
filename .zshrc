@@ -9,6 +9,7 @@ alias grc='git rm --cached'
 alias grcr='git rm -r --cached'
 alias gphm='git push heroku main'
 alias gpa='git branch -r | grep -v "\->" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done; git fetch --all; git pull --all'
+alias gitdiscard='git clean -fd; git checkout -- .'
 gdl() { git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done }
 
 # docker shortcuts
@@ -33,6 +34,7 @@ alias nanorc='nano ~/.zshrc'
 alias readrc='source ~/.zshrc'
 alias cliprc='cat ~/.zshrc | clip.exe'
 alias codeomz='code ~/.oh-my-zsh'
+alias nanowslc='nano /mnt/c/Users/Kiko/.wslconfig'
 
 # shortcuts
 alias emoji='code ~/Documents/resources/emoji.md'
@@ -40,7 +42,6 @@ alias ports='sudo netstat -plten'
 alias herokuhck='heroku logs --tail --app healthchecker-api'
 killport() { sudo kill -9 `sudo lsof -t -i:$1` }
 # assoauth() { curl -X POST -H "Content-Type: application/json" -d '{"username":"201704790","password":"pass"}' http://localhost:8080/authentication/register }
-# find src -name "*.jsx" -exec sh -c 'mv "$0" "${0%.jsx}.tsx"' {} \;
 
 # change directory
 alias docs='cd ~/Documents'
@@ -51,16 +52,30 @@ alias wiki='cd ~/Documents/feup/robin-mes.wiki'
 alias robin='cd ~/Documents/feup/robin-website'
 alias asso='cd ~/Documents/feup/uni4all'
 alias tts='cd ~/Documents/niaefeup/tts-revamp-fe'
+alias ttsb='cd ~/Documents/niaefeup/tts-be'
 alias me='cd ~/Documents/kikogoncalves.me'
 alias fh='cd ~/Documents/finishershub'
+alias guerner='cd ~/Documents/guerner'
+alias diss='cd ~/Documents/dissertation'
+alias thesis='diss'
+alias ux='cd ~/Documents/usability-dashboard'
+
+# change directory enhance
+alias ttsx='tts; code .; npm start'
+alias ttsbx='ttsb; docker compose up --build'
+alias mex='me; code .; npm start'
+alias fhx='fh; code .; npm start'
+alias fhb='fh; cd src/backend'
+alias guernerx='guerner; code .; npm start'
 
 # program shortcuts
 alias clip='clip.exe'
 alias explorer='explorer.exe'
 alias start='cmd.exe /c start cmd.exe /c wsl.exe'
-alias python='python3.9'
-alias pip='python3.9 -m pip'
 alias ghci='/opt/ghc/bin/ghci-9.0.1'
+alias python='python3'
+alias pip='pip3'
+# find src -name "*.jsx" -exec sh -c 'mv "$0" "${0%.jsx}.tsx"' {} \;
 
 # temporary
 alias pflsync='pfld; git pull; pfl; cd workshops'
@@ -180,3 +195,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
