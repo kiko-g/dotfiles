@@ -39,5 +39,47 @@
     "key": "shift+alt+a",
     "command": "-editor.action.blockComment",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-editor.action.smartSelect.expand",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.terminal.killEditor",
+    "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated && resourceScheme == 'vscode-terminal' || terminalEditorFocus && terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "console.log(${TM_SELECTED_TEXT}$1)$2"
+    }
+  },
+  {
+    "key": "ctrl+shift+oem_7",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "useEffect(() => {${TM_SELECTED_TEXT}$1}, [$2])"
+    }
+  },
+  {
+    "key": "ctrl+shift+9",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "const { t } = useI18next()\nconst location = t('location')!"
+    }
+  },
+  {
+    "key": "ctrl+shift+8",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "import { useI18next } from 'gatsby-plugin-react-i18next'"
+    }
   }
 ]
