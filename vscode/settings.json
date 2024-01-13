@@ -1,0 +1,449 @@
+{
+  "editor.fontSize": 11.5,
+  "editor.wordWrapColumn": 100,
+  "editor.rulers": [120],
+  "editor.tabSize": 2,
+  "editor.quickSuggestionsDelay": 10,
+  "editor.fontFamily": "Fira Code",
+  "editor.cursorBlinking": "phase",
+  "editor.suggestSelection": "first",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.fontLigatures": false,
+  "editor.minimap.enabled": false,
+  "editor.overviewRulerBorder": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.tabCompletion": "off",
+  "editor.suggest.localityBonus": true,
+  "editor.wordBasedSuggestions": "off",
+  "editor.parameterHints.enabled": true,
+  "editor.formatOnType": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.inlineSuggest.enabled": true,
+  "editor.renderWhitespace": "none",
+  "editor.wordWrap": "on",
+  "editor.guides.indentation": false,
+  "editor.guides.bracketPairs": false,
+  "editor.linkedEditing": true,
+  "editor.semanticHighlighting.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.accessibilitySupport": "off",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "workbench.colorTheme": "Tailwind Moon", // Spinel | GitHub Dark Mode | Tailwind Moon | One Monokai | Atom One Dark | New Moon
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "Keyword, Storage",
+        "scope": ["keyword", "storage.type", "storage.modifier"],
+        "settings": {
+          "foreground": "#A78BFA"
+        }
+      },
+      {
+        "name": "Classes",
+        "scope": ["entity"],
+        "settings": {
+          "foreground": "#48e6b9"
+        }
+      },
+      {
+        "name": "String",
+        "scope": ["string", "punctuation.definition.string.begin", "punctuation.definition.string.end"],
+        "settings": {
+          "foreground": "#34D399"
+        }
+      },
+      {
+        "name": "Storage",
+        "scope": "storage.type",
+        "settings": {
+          "foreground": "#60A5FA"
+        }
+      },
+      {
+        "name": "",
+        "scope": "punctuation.definition.template-expression",
+        "settings": {
+          "foreground": "#F472B6"
+        }
+      },
+      {
+        "name": "Boolean",
+        "scope": "constant.language",
+        "settings": {
+          "foreground": "#ff7777"
+        }
+      },
+      {
+        "name": "Boolean",
+        "scope": "constant.language.symbol.ruby",
+        "settings": {
+          "foreground": "#c5d5e9"
+        }
+      },
+      {
+        "name": "Boolean",
+        "scope": "constant.language.symbol.hashkey.ruby",
+        "settings": {
+          "foreground": "#4b9fff"
+        }
+      },
+      {
+        "name": "Variables",
+        "scope": ["variable"],
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#ffffff"
+        }
+      },
+      {
+        "name": "variable.other.constant.property",
+        "scope": ["variable.other.constant.property"],
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#60A5FA"
+        }
+      },
+      {
+        "name": "Variables other",
+        "scope": ["variable.other.property.js"],
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#a4d6ff"
+        }
+      },
+      {
+        "name": "Parameter variables",
+        "scope": ["variable.parameter"],
+        "settings": {
+          "fontStyle": "bold",
+          "foreground": "#ffffff"
+        }
+      },
+      {
+        "name": "Parameter variables",
+        "scope": ["variable.parameter.function.language.special.self.python"],
+        "settings": {
+          "fontStyle": "",
+          "foreground": "#5e9af3"
+        }
+      },
+      {
+        "name": "Markdown Bold",
+        "scope": ["markup.bold.markdown"],
+        "settings": {
+          "fontStyle": "bold",
+          "foreground": "#3286da"
+        }
+      },
+      {
+        "name": "Markdown Inline Code",
+        "scope": ["markup.inline.raw.string.markdown"],
+        "settings": {
+          "foreground": "#f59881"
+        }
+      },
+      {
+        "name": "CSS Pseudo Classes",
+        "scope": "entity.other.attribute-name.pseudo-class.css",
+        "settings": {
+          "foreground": "#2dd4bf",
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.tree.indent": 6,
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.startupEditor": "readme",
+  "workbench.colorCustomizations": {},
+  "diffEditor.wordWrap": "on",
+  "explorer.sortOrder": "type",
+  "prettier.semi": false,
+  "prettier.tabWidth": 2,
+  "prettier.printWidth": 130,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "postcss": "css"
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "editor.formatOnSave": false
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[env]": {
+    "editor.defaultFormatter": "IronGeek.vscode-env"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "ms-vsliveshare.vsliveshare"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.tabSize": 4,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 120
+  },
+  "python.formatting.provider": "autopep8",
+  "python.formatting.blackArgs": ["--line-length 100"],
+  "python.formatting.autopep8Args": ["--max-line-length=120"],
+  "[dart]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "Dart-Code.dart-code"
+  },
+  "[css]": {
+    "editor.wordWrapColumn": 120,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.wordWrapColumn": 120,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "css.validate": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "[blade]": {
+    "editor.autoClosingBrackets": "always"
+  },
+  "[haskell]": {
+    "editor.bracketPairColorization.enabled": true
+  },
+  "[cpp]": {
+    "editor.tabSize": 4
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.semanticHighlighting.enabled": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "editor.rulers": [120]
+  },
+  "rubyLsp.rubyVersionManager": "rvm",
+  "rubyLsp.bundleGemfile": ".ruby-lsp/Gemfile",
+  "rubyLsp.enableExperimentalFeatures": true,
+  "[liquid]": {
+    "editor.bracketPairColorization.enabled": false,
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "Shopify.theme-check-vscode"
+  },
+  "material-icon-theme.activeIconPack": "react",
+  "material-icon-theme.saturation": 1,
+  "material-icon-theme.folders.color": "#aaccee",
+  "material-icon-theme.folders.theme": "specific",
+  "material-icon-theme.folders.associations": {
+    "ltw": "examples",
+    "proj": "git",
+    "labs": "test",
+    "p2p": "routes",
+    "maps": "environment",
+    "graph": "cluster",
+    "anim": "animation",
+    "forms": "php",
+    "sections": "layout",
+    "theory": "functions",
+    "scenes": "views",
+    "slides": "syntax",
+    "studio": "cluster",
+    "actions": "Redux-actions",
+    "reducers": "Redux-reducer",
+    "workflows": "github",
+    "midterms": "docs",
+    "application": "app",
+    "ajax": "json",
+    "graphviewer": "fastlane",
+    "primitives": "environment",
+    "cmake-build-debug": "dist",
+    "cmake-build-default": "dist",
+    "Calculator": "functions",
+    "bootstrap": "css",
+    "partials": "template"
+  },
+  "material-icon-theme.files.associations": {
+    "*.pickle": "database",
+    "*.db": "database",
+    "*.vert": "shaderlab",
+    "*.frag": "shaderlab",
+    "*.class": "drone",
+    "dockerignore": "docker",
+    ".env_production": "tune",
+    "*.properties": "gradle",
+    "artisan": "php",
+    "*.jjt": "",
+    "*.jj": "",
+    "*.jjm": "",
+    "*.env*": "tune",
+    ".wslconfig": "tune",
+    "*.sdp": "key",
+    "*.jcfg": "tune",
+    "*.mjpeg": "video"
+  },
+  "files.associations": {
+    "*.css": "css",
+    "*.html": "html",
+    "*.pl": "prolog",
+    "*.jmm": "java",
+    "*.jj": "java",
+    "*.jjt": "java",
+    "*.j": "java",
+    "*.blade.php": "blade",
+    "*.in": "txt",
+    "*.out": "txt",
+    "*.input": "txt",
+    "*.output": "txt",
+    ".wslconfig": "environment",
+    ".env*": "env"
+  },
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.next": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/node_modules": true
+  },
+  "workbench.editorAssociations": {
+    "*.png": "imagePreview.previewEditor"
+  },
+  "git.enabled": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.decorations.enabled": false,
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.fontWeightBold": "400",
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.drawBoldTextInBrightColors": false,
+  "zenMode.hideStatusBar": false,
+  "extensions.ignoreRecommendations": false,
+  "intelephense.environment.documentRoot": "",
+  "intelephense.format.enable": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "tabnine.experimentalAutoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "git.ignoreRebaseWarning": true,
+  "github.copilot.enable": {
+    "*": true,
+    "javascript": true,
+    "typescript": true,
+    "typescriptreact": true,
+    "javascriptreact": true,
+    "json": true,
+    "jsonc": true,
+    "markdown": true,
+    "html": true
+  },
+  "redhat.telemetry.enabled": true,
+  "git.openRepositoryInParentFolders": "never",
+  "search.exclude": {
+    "**/.next": true
+  },
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  },
+  "todohighlight.keywords": [
+    {
+      "text": "@@@",
+      "color": "white",
+      "backgroundColor": "#2f68aa",
+      "isWholeLine": false,
+      "overviewRulerColor": "#FFFFFF22"
+    }
+  ],
+  "highlight-matching-tag.styles": {
+    "closing": {
+      "full": {
+        "highlight": "",
+        "surround": "",
+        "underline": ""
+      },
+      "left": {
+        "highlight": "",
+        "surround": "",
+        "underline": ""
+      },
+      "name": {
+        "highlight": "#d1ffe650",
+        "surround": "",
+        "underline": "#d1ffe690"
+      },
+      "right": {
+        "highlight": "",
+        "surround": "",
+        "underline": ""
+      }
+    },
+    "opening": {
+      "full": {
+        "highlight": "",
+        "surround": "",
+        "underline": ""
+      },
+      "left": {
+        "highlight": "",
+        "surround": "",
+        "underline": ""
+      },
+      "name": {
+        "highlight": "#d1ffe650",
+        "surround": "",
+        "underline": "#d1ffe690"
+      },
+      "right": {
+        "highlight": "",
+        "surround": "",
+        "underline": ""
+      }
+    },
+    "inner": {
+      "highlight": "",
+      "surround": "",
+      "underline": ""
+    }
+  }
+}
