@@ -258,15 +258,9 @@ function gitUpdateWith() {
   git merge $targetBranch
 }
 
-function revertFile() {
+function gitRevertFile() {
   local branch=$1
   local filepath=$2
-  git checkout $branch -- $filepath
-}
-
-function revertFilePb() {
-  local branch="themes/1240-product-block-options-standardization"
-  local filepath=$1
   git checkout $branch -- $filepath
 }
 
