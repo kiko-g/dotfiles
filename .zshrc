@@ -27,50 +27,72 @@ function vlen() {
 }
 
 # jumpseller
-function js0 () {
+function jsUpdate () {
   rls
   clear
   bundle install --gemfile ~/Documents/dev/rails/Gemfile
   bin/rails db:migrate
 }
+alias js0=jsUpdate
 
-function js1 () {
+function jsRails () {
   rls
   clear
   yarn install
   bundle install
   rvmsudo rails s
 }
+alias js1=jsRails
 
-function js2 () {
+function jsSidekiq () {
+  rls
+  clear
+  rvmsudo sidekiq -C config/sidekiq.yml
+}
+alias js2=jsSidekiq
+
+function jsAdmin () {
   rls
   cd engines/admin
   clear
   yarn install
   bundle install
-  ./bin/webpacker-dev-server
+  ./bin/shakapacker-dev-server
 }
+alias js3=jsAdmin
 
-function js3 () {
+function jsTranslate () {
+  rls
+  cd engines/translate
+  clear
+  yarn install
+  bundle install
+  ./bin/shakapacker-dev-server
+}
+alias js4=jsTranslate
+
+function jsCheckout () {
   rls
   cd engines/checkout
   clear
   yarn install
   bundle install
-  ./bin/webpacker-dev-server
+  ./bin/shakapacker-dev-server
 }
-
-function js4 () {
-  rls
-  clear
-  rvmsudo sidekiq -C config/sidekiq.yml
-}
+alias js5=jsCheckout
 
 function jsWatch () {
   rls
   clear
-  node_modules/webpack/bin/webpack.js --progress --watch --mode development
+  rm .apisecrets
+  local login_token=7b8facf9fc9caaa8b44441f868cbcc4f
+  local auth_token=b45e30130086a4ebc7c4e7d364541af1
+  echo http://test.localhost $login_token:$auth_token > .apisecrets
+  node scripts/fswatch_theme.mjs --components -t $1
+  # https://kikostore.jumpseller.com 62e32c267e6da6ccaf956002c0a19163:8cb32f0feeb04b55ea549cf83e4ee592
+  # node scripts/fswatch_theme.mjs -t 704148 -s https://kikostore.jumpseller.com
 }
+alias js6=jsWatch
 
 function jsImages () {
   jsimg
@@ -79,43 +101,37 @@ function jsImages () {
   docker run -v "$host_path:/app" -it -p 8080:8080 -t jumpseller/images-cdn
 }
 
-function jsThemeWatch () {
-  rls
-  clear
-  rm .apisecrets
-  echo http://test.localhost 8aa77c30afc08719a9df66c8b77da7b4:15328eddacb4e9c12f607ba342819aaf > .apisecrets
-  node scripts/fswatch_theme.mjs -t $1
-  # https://kikostore.jumpseller.com 62e32c267e6da6ccaf956002c0a19163:8cb32f0feeb04b55ea549cf83e4ee592
-  #node scripts/fswatch_theme.mjs -t 704148 -s https://kikostore.jumpseller.com
-}
-
-function jsThemeWatchSimple () {
-  rls
-  clear
-  rm .apisecrets
-  echo https://simple.jumpseller.com 9dc22c235758fbfbd5e036a51a2c93bd:6afed259297e41075b833c7f606ae5fb > .apisecrets
-  node scripts/fswatch_theme.mjs -t $1
-}
-
-function jsThemeLint () {
+function jsLint () {
   rake "themes:lint[$1]"
 }
 
-function jsThemeCheck () {
+function jsCheck () {
   rake "themes:check[$1]"
 }
 
-function jsThemeLintCheck () {
+function jsLintCheck () {
   rake "themes:lint[$1]"
   rake "themes:check[$1]"
 }
 
-function jsThemeLintCheckBase () {
-  rake "themes:lint[base]"
-  rake "themes:check[base]"
-  # yarn themes:html-check
-  # yarn themes:css-check
-  # yarn run themes:format public/themes/base
+function jsTheme () {
+  rake "themes:lint[$1]"
+  rake "themes:check[$1]"
+  yarn themes:html-check public/themes/$1
+  yarn themes:css-check public/themes/$1
+  yarn run themes:format public/themes/$1
+}
+
+function jsThemeFormat () {
+  yarn run themes:format public/themes/$1
+}
+
+function jsThemeAll () {
+  rake "themes:lint"
+  rake "themes:check"
+  yarn themes:html-check public/themes
+  yarn themes:css-check public/themes
+  yarn run themes:format public/themes
 }
 
 # jumpseller help
@@ -323,12 +339,17 @@ function catrc() {
 }
 
 function cliprc() {
-  cat ~/.zshrc | clip.exe
+  cat ~/.zshrc | pbcopy
 }
 
 function coderc() {
   code ~/.zshrc
 }
+
+function cursorrc() {
+  cursor ~/.zshrc
+}
+alias crc=cursorrc
 
 function nanorc() {
   nano ~/.zshrc
@@ -337,6 +358,7 @@ function nanorc() {
 function readrc() {
   source ~/.zshrc
 }
+alias rrc=readrc
 
 function codeomz() {
   code ~/.oh-my-zsh
@@ -420,31 +442,28 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
+# Language environment
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 export EDITOR='nano'
 export GIT_EDITOR=nano
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
+# NVM configuration
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# Bun configuration (removed duplicate entries)
+export BUN_INSTALL="$HOME/.bun"
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+# export PATH="$BUN_INSTALL/bin:$PATH"
+
+# RVM configuration
 export rvmsudo_secure_path=1
 
-# bun completions
-[ -s "/Users/kikogoncalves/.bun/_bun" ] && source "/Users/kikogoncalves/.bun/_bun"
+# Uncomment if needed
+# export ARCHFLAGS="-arch x86_64"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
